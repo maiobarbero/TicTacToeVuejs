@@ -1,6 +1,17 @@
 <template>
   <div>
     <Status :winner="winner.player" :player="player" :isDraw="isDraw" />
+
+    <Reset
+      v-if="winner.player === 'X' || winner.player === 'O'"
+      class="btn"
+      @click="newGame"
+    />
+
+    <Reset v-else-if="isDraw" class="btn" @click="newGame" />
+
+    <Reset v-else class="btn btn-off" />
+
     <div class="boardGame">
       <Square
         v-for="(squareValue, position) in squares"
@@ -15,12 +26,14 @@
 <script>
 import Square from "./Square";
 import Status from "./Status";
+import Reset from "./Reset";
 import Winner from "../winnerFormula";
 
 export default {
   components: {
     Square,
     Status,
+    Reset,
   },
   data() {
     return {
@@ -43,6 +56,10 @@ export default {
       }
       this.$set(this.squares, position, this.player);
       this.player = this.player === "X" ? "O" : "X";
+    },
+    newGame() {
+      this.squares = Array(9).fill(null);
+      this.player = "X";
     },
   },
 };

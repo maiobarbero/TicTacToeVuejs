@@ -30,6 +30,7 @@ html {
   font-size: 90px;
   font-weight: bold;
   color: #fff;
+  border-radius: 10px;
 }
 .square:hover {
   box-shadow: inset 5px 5px 15px rgb(43, 63, 160),
@@ -41,4 +42,20 @@ html {
   font-size: 60px;
   font-weight: bold;
   text-align: center;
+}
+
+.btn {
+  color: #fff;
+  text-align: center;
+  border: 6px solid #fff;
+  padding: 15px 30px;
+  display: inline-block;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.btn.btn-off {
+  color: rgba(102, 102, 102, 0.6);
+  border: 6px solid rgba(102, 102, 102, 0.6);
 }
