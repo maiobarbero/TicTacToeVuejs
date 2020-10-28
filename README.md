@@ -1,6 +1,7 @@
-# Vue.js-TicTacToe
+You already know how to play :)
+Thi project was made for start2impact Vue.js course
 
-Tic Tac Toe game with Vue.js
+Clone this repo then:
 
 ## Install from existing repo
 
