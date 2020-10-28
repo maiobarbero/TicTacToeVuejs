@@ -53,6 +53,8 @@ export default {
     squareClicked(position) {
       if (this.squares[position]) {
         return;
+      } else if (this.winner.player === "X" || this.winner.player === "O") {
+        return;
       }
       this.$set(this.squares, position, this.player);
       this.player = this.player === "X" ? "O" : "X";
